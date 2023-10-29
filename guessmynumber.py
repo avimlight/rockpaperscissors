@@ -36,12 +36,21 @@ def rps(name="PlayerOne"):
             nonlocal name
             nonlocal player_wins
 
-            if player == 1 and computer == 1:
+            if (
+                (player == 1 and computer == 1)
+                or (player == 2 and computer == 2)
+                or (player == 3 and computer == 3)
+            ):
                 player_wins += 1
                 return f"🥳{name} win\n Your winning percentage is 100.00%"
-            elif player == 1 and computer == 2:
+            elif (player == 1 and computer == 2) or (player == 2 and computer == 1):
                 return f"soory{name} better luck next time\n your winning percentage is 50%"
-            elif player == 1 and computer == 3:
+            elif (
+                (player == 1 and computer == 3)
+                or (player == 3 and computer == 1)
+                or (player == 2 and computer == 3)
+                or (player == 3 and computer == 2)
+            ):
                 return f"soory{name} better luck next time\n your winning percentage is 33.33%"
 
         winner = decide_winner(player, computer)
@@ -86,3 +95,4 @@ if __name__ == "__main__":
 
     rock_paper_scissors = rps(args.name)
     rock_paper_scissors()
+
