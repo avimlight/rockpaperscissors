@@ -100,3 +100,5 @@ if __name__ == "__main__":
 
     rock_paper_scissors = rps(args.name)
     rock_paper_scissors()
+#this is the 7th process    
+    
